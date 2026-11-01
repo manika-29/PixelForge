@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* LIGHT MODE */
+  --bg-page: #f5f3ff;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --border: #ddd6fe;
+  --border-strong: #a78bfa;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-disabled: #9ca3af;
+
+  --primary-blue: #7c3aed;
+  --primary-hover: #6d28d9;
+  --primary-light: #ede9fe;
+  --primary-dark: #4c1d95;
+
+  --btn-secondary: #e9d5ff;
+  --btn-secondary-text: #1f2937;
+  --btn-secondary-hover: #ddd6fe;
+
+  --link-color: #6d28d9;
+
+  --success: #15803d;
+  --success-bg: #dcfce7;
+  --success-border: #86efac;
+  --success-text: #166534;
+
+  --warning: #b45309;
+  --warning-bg: #fef3c7;
+  --warning-border: #fcd34d;
+  --warning-text: #92400e;
+
+  --error: #dc2626;
+  --error-bg: #fee2e2;
+  --error-border: #fca5a5;
+  --error-text: #991b1b;
+
+  --info: #0f766e;
+  --info-bg: #ccfbf1;
+  --footer-bg: #f3e8ff;
+}
+
+.dark {
+  /* DARK MODE */
+  --bg-page: #090b14;
+  --bg-surface: #111827;
+  --bg-surface-secondary: #181c2c;
+  --bg-card: #111827;
+  --bg-input: #1f2937;
+  --border: #312e81;
+  --border-strong: #8b5cf6;
+  --text-primary: #f8fafc;
+  --text-secondary: #d1d5db;
+  --text-muted: #94a3b8;
+  --text-disabled: #64748b;
+
+  --primary-blue: #8b5cf6;
+  --primary-hover: #a78bfa;
+  --primary-light: #312e81;
+  --primary-dark: #c4b5fd;
+
+  --btn-secondary: #1f2937;
+  --btn-secondary-text: #f8fafc;
+  --btn-secondary-hover: #374151;
+
+  --link-color: #c4b5fd;
+
+  --success: #4ade80;
+  --success-bg: #14532d;
+  --success-border: #22c55e;
+  --success-text: #bbf7d0;
+
+  --warning: #fbbf24;
+  --warning-bg: #78350f;
+  --warning-border: #f59e0b;
+  --warning-text: #fef3c7;
+
+  --error: #f87171;
+  --error-bg: #7f1d1d;
+  --error-border: #ef4444;
+  --error-text: #fecaca;
+
+  --info: #67e8f9;
+  --info-bg: #083344;
+  --footer-bg: #0b1020;
+}
+
+body {
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(45, 212, 191, 0.12), transparent 30%),
+    var(--bg-page);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.25);
+}
+
+/* Scrollbars for Light and Dark */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Checkerboards for transparency testing */
+.bg-checkerboard-dark {
+  background-color: #0f172a;
+  background-image: 
+    linear-gradient(45deg, #1e293b 25%, transparent 25%),
+    linear-gradient(-45deg, #1e293b 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #1e293b 75%),
+    linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.bg-checkerboard-light {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
+    linear-gradient(-45deg, #e2e8f0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
+    linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
